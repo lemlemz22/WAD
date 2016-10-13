@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="guesstheNumbers">
+<head>
+	<title>Guessing Game</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+</head>
+<body>
+<div class="container" ng-controller="guesstheNumbersCtrl">
+<h1 style="font-family: Times New Roman">Guess The Number!</h1>
+	
+<p class="well lead">Guess the computer generated random number between 1 and 1000.</p>
+
+<label>Your Guess:</label>
+<input type="number" ng-model="guess"/>
+
+<button ng-click="verifyTheGuess()" class="btn btn-primary btn-sm">Verify</button>
+
+<button ng-click="initializeTheGame()" class="btn btn-warning btn-sm">Restart</button>
+
+<p>
+	<p ng-show="deviation<0" class="alert alert-warning">Your guess is higher.</p>
+	<p ng-show="deviation>0" class="alert alert-warning">Your guess is lower.</p>
+	<p ng-show="deviation===0" class="alert alert-success">You have the right guess! Please restart the game.</p>
+</p>
+<p class="text-info">No of guesses : <span class="badge">{{ noofTries }}</span></p>
+
+
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+</body>
+<footer class="well well-sm" class="panel-footer" style="text-align: center;">Copyright &copy 2016 by Lemz of BSIS - 2.</footer>
+</div>
+</html>
